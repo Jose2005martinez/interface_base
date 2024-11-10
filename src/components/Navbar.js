@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import './ShowTitle.css'; // Crea este archivo CSS si deseas estilos personalizados
+import '../styles/ShowTitle.css';
 
 const ShowTitle = () => {
-  // Estado para controlar si el segundo título debe mostrarse
   const [showSecondTitle, setShowSecondTitle] = useState(false);
 
-  // Función para cambiar el estado al hacer clic en el botón
   const handleButtonClick = () => {
     setShowSecondTitle(true);
   };

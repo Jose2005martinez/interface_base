@@ -1,15 +1,18 @@
 import React from 'react';
-import Home from './pages/Home';
-import Main from './pages/Main';
-import './styles/App.css';
+import { Link } from 'react-router-dom';
+import CardList from '../components/CardList';
+import '../styles/Main.css';
 
-function App() {
+const Main = () => {
+  const items = ['Elemento 1', 'Elemento 2', 'Elemento 3', 'Elemento 4'];
+
   return (
-    <div className="App">
-      <Home />
-      <Main />
+    <div className="main-container">
+      <h1>Main Page</h1>
+      <Link to="/users">Ver Usuarios</Link>
+      <CardList items={items} />
     </div>
   );
-}
+};
 
-export default App;
+export default Main;
