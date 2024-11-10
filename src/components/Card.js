@@ -1,13 +1,17 @@
 import React from 'react';
-import './Card.css'; // Asegúrate de crear este archivo CSS
+import './CardList.css'; // Asegúrate de crear este archivo CSS para los estilos
 
-const Card = ({ title, content }) => {
+const CardList = ({ items }) => {
   return (
-    <div className="card">
-      <h2>{title}</h2>
-      <p>{content}</p>
+    <div className="card-list">
+      <h2>Lista de elementos</h2>
+      <ul>
+        {items.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
     </div>
   );
 };
 
-export default Card;
+export default CardList;

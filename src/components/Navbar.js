@@ -1,15 +1,22 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './Navbar.css'; // Asegúrate de crear este archivo CSS
+import React, { useState } from 'react';
+import './ShowTitle.css'; // Crea este archivo CSS si deseas estilos personalizados
 
-const Navbar = () => {
+const ShowTitle = () => {
+  // Estado para controlar si el segundo título debe mostrarse
+  const [showSecondTitle, setShowSecondTitle] = useState(false);
+
+  // Función para cambiar el estado al hacer clic en el botón
+  const handleButtonClick = () => {
+    setShowSecondTitle(true);
+  };
+
   return (
-    <nav>
-      <Link to="/">Inicio</Link>
-      <Link to="/users">Usuarios</Link>
-      <Link to="/about">Acerca de</Link>
-    </nav>
+    <div className="show-title-container">
+      <h1>Título Inicial</h1>
+      <button onClick={handleButtonClick}>Mostrar otro título</button>
+      {showSecondTitle && <h2>Este es el segundo título</h2>}
+    </div>
   );
 };
 
-export default Navbar;
+export default ShowTitle;
